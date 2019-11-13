@@ -25,7 +25,8 @@
           if(posts) {
             console.log(posts);
             let postsList = '';
-
+            posts.innerHTML = '';
+            
             data.posts.forEach( post => {
             
                postsList += `<li>
@@ -45,9 +46,9 @@
 
           if(blogs) {
             let blogsList = '';
-
+            blogs.innerHTML = '';
             data.posts.forEach( post => {
-            
+              
                blogsList += `<li>
                               <article>
                                  <img src="${post.imageURL}" width="400" alt="">
@@ -64,11 +65,11 @@
           const events = document.querySelector('.events');
 
           if(events){
-
+            events.innerHTML ='';
             let eventList = '';
 
           data.events.forEach( ev => {
-          
+            
             eventList += `<li>
                         <div>
                            <h5>${ev.date}</h5>
@@ -85,6 +86,7 @@
           const hikers = document.querySelector('.hikers-list');
 
           if(hikers) {
+             hikers.innerHTML = '';
             let hikersList = '';
             data.hikers.forEach(el => {
                
@@ -104,6 +106,7 @@
 
           const about = document.querySelector('.about');
           if(about) {
+
             about.innerHTML = `<p><em> ${data.about.title} </em></p>
                              <p> ${data.about.text}</p>`;
           }
