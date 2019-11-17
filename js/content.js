@@ -97,4 +97,4 @@
 }
 
 
-document.addEventListener('load', getInformation());
+//document.addEventListener('load', getInformation());
