@@ -23,18 +23,11 @@
                 <li><a href="./contact.html"> Contact </a></li>
             </ul>
         </nav>
-
-
-        <h1>Contact Information</h1>
-
-       
+        <h1>Contact Information</h1>  
     </header>
     <main>
-        <section>
+        <section id="contact">
             <h2>Contact</h2>
-            <img src="images/hikers1003.jpg" alt=" Mountain Forest" width="350" height="200">
-
-              <h3>Hikers</h3>
 
                <p><strong>Address</strong></p>
                <p>somewhere 0988 elms street, NY</p>
@@ -43,11 +36,41 @@
                <p>777-777-7777</p>
 
                <p><strong>Email</strong></p>
-               <p>Soverycool@hokers.com</p>
-        
+               <p>Soverycool@hikers.com</p> 
             
                 
             </section>
+
+            <form action="contact.html" method="post">
+            <p>
+                <label for="name">
+                 <input type="text" name="name" id="name" placeholder="Full Name">
+                </label>
+            </p>
+            <p>
+                <label for="phone">
+                  <input type="tel" name="phone" id="phone" placeholder="Phone">
+                </label>
+            </p>
+            <p>
+                <label for="email">
+                 <input type="email" name="email" id="email" placeholder="email">
+                </label>
+            </p>
+              <p> 
+                <label for="message">
+                 <textarea name="message" id="message" rows="20" cols="50" placeholder="Type Message"></textarea>
+                </label>
+            </p>
+                <select name="state" id="state">
+                    <option value="" disabled selected hidden> In What State</option>
+                    <option value="">Orlando, FL</option>
+                    <option value="">Rochester, NY</option>
+                    <option value="">San Francisco, CA</option>
+                    <option value="">Seattle, WA</option>
+                </select>
+
+            </form>
 
             </main>
         <hr>
@@ -158,7 +181,6 @@
                     </li>
                     <li>
                         <a href="https://www.instragram.com">
-                            <img src="images/instagram.png" alt="">
                             <p>instragram</p>
                         </a>
                     </li>
