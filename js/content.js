@@ -7,7 +7,7 @@
     fetch("https://joshbloom.github.io/dws1/data/hikersguide.json")
     .then((info) => data = info.json()).then(
        data => {
-          console.log(data.events);
+          console.log(data);
 
           
           const locations = document.querySelector('.locations');
@@ -23,10 +23,10 @@
           const posts = document.querySelector('.posts');
 
           if(posts) {
-            console.log(posts);
+            //console.log(posts);
             let postsList = '';
             posts.innerHTML = '';
-            
+
             data.posts.forEach( post => {
             
                postsList += `<li>
@@ -41,27 +41,7 @@
           posts.insertAdjacentHTML('afterbegin', postsList);
 
           }
-         
-          const blogs = document.querySelector('.blogs');
-
-          if(blogs) {
-            let blogsList = '';
-            blogs.innerHTML = '';
-            data.posts.forEach( post => {
-              
-               blogsList += `<li>
-                              <article>
-                                 <img src="${post.imageURL}" width="400" alt="">
-                                 <h3>${post.title} </h3>
-                                 <p>${post.text}</p>
-                                 <button>Read more</button>
-                              </article>
-                           </li>`;
-            });
-          blogs.insertAdjacentHTML('afterbegin', blogsList);
-
-          }
-
+          
           const events = document.querySelector('.events');
 
           if(events){
