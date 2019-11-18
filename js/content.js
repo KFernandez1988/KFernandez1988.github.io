@@ -7,7 +7,7 @@
     fetch("https://joshbloom.github.io/dws1/data/hikersguide.json")
     .then((info) => data = info.json()).then(
        data => {
-          console.log(data);
+          console.log(data.posts);
 
           
           const locations = document.querySelector('.locations');
@@ -15,7 +15,7 @@
           if(locations) {
           let location = data.locations[0];
           locations.innerHTML = `<h2>${location.city}, ${location.state}</h2>
-          <p><em><b>${location.title}</b></em></p>
+          <p><em></b>${location.title}</b></em></p>
           <p>${location.text}</p>`;
 
           }
@@ -28,13 +28,14 @@
             posts.innerHTML = '';
 
             data.posts.forEach( post => {
-            
+               let text = post.text.slice(0 , 150);
                postsList += `<li>
                               <article>
-                                 <img src="${post.imageURL}" width="400" alt="">
+                                 <img src="${post.imageURL}" alt="">
                                  <h3>${post.title} </h3>
-                                 <p>${post.text}</p>
-                                 <button>Read more</button>
+                                 <h5>${post.subtitle}</h5>
+                                 <p>${text}</p>
+                                 <button><a href="#">Read more</a></button>
                               </article>
                            </li>`;
             });
@@ -87,7 +88,8 @@
           const about = document.querySelector('.about');
           if(about) {
 
-            about.innerHTML = `<p><em> ${data.about.title} </em></p>
+            about.innerHTML = `<h3><strong>About</strong></h3>
+                             <p><em> ${data.about.title} </em></p>
                              <p> ${data.about.text}</p>`;
           }
           
@@ -97,4 +99,4 @@
 }
 
 
-//document.addEventListener('load', getInformation());
+document.addEventListener('load', getInformation());

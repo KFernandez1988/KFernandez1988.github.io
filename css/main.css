@@ -3,5 +3,285 @@
 ================================================== */
 
 html {
-	
+	font-size: 62.5%;
+}
+
+body {
+    font: 1.6rem/1.5 "Program OT", arial, sans-serif;
+    background: #111;
+    color: #888;
+}
+/* Typegraphy */
+h4, h5 {
+    font-family: "Program OT Bold";
+    color: #aaa;
+ }
+h2 {
+    font: 3.5rem "Program OT Black";
+    color: #eee;
+    text-transform: uppercase;
+}
+
+h3 {
+  font: 2.4 "Geogia Bold";
+  color: #ccc;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+h5 {
+    font-size: 1.4rem;
+}
+
+h3 strong a {
+ font-weight: bold;
+ color: #1abc9c;
+}
+
+/* Base Style */
+
+
+body > section:nth-of-type(odd), body {
+    background: #222;
+}
+body > section:nth-last-of-type(event) {
+    background: #aaa;
+}
+
+
+.wrapper {
+    border: 5px solid white;
+}
+
+header,
+body > section,
+footer {
+    border: 5px solid red;
+    padding: 2rem 0;
+}
+
+footer {
+    background-color: #000;
+}
+
+header {
+    background: center/cover url("../images/hikers1001.jpg");
+    height: 90vh;
+}
+
+header > * {
+    width: 50%;
+    margin: 2.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+header:after {
+    content: '';
+    position: absolute;
+    top:0;left:0;
+    width: 100%;
+    height: 100%;
+    background:  no-repeat url("../images/mountain.png") 0% 86.5%/120rem;
+}
+
+.wrapper,
+body > section:nth-last-of-type(odd) {
+    /*max-width: 1000px;*/
+    margin-right: auto;
+    margin-left: auto;
+}
+section {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden ;
+}
+
+h1 {
+ float: left;
+}
+
+nav {
+    padding: 1rem 0;
+    margin: 1.5rem 0;
+    float: right;
+}
+
+nav li {
+    width: 6.5rem;
+    display: inline-block;
+}
+
+nav a {
+    padding: 1.2rem, 2.5rem;
+    border-right: 1px solid #eee;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+    opacity: .5;
+}
+nav a:hover {
+    opacity: 1;
+}
+
+nav a[href="./contact.html"] {
+  border-width: 0;
+}
+
+
+section#banner {
+    width: 100%;
+}
+
+#banner, .locations {
+    width: calc(100%/3);
+}
+
+#banner::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#carol-buttons {
+    width: 100%;
+    display: flex;
+    margin-top: 15rem;
+    justify-content: space-between;
+}
+
+section#banner button {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 5rem 10rem;
+    opacity: .5;
+}
+
+.locations {
+    width: 25%;
+    background: #aaa;
+    border-right: 3px solid #1abc9c;
+    color: #ccc;
+    margin: 5rem 15rem 25rem 95rem; 
+    padding: 1.5rem; 
+}
+
+.locations em {
+    color: #eee;
+}
+
+
+
+/*** Posts section ***/
+.post ul {
+    display: block;
+    width: 100%;
+}
+
+.posts li {
+    width: calc(100%/3.8);
+    background-color: #000;
+    height: 500px;
+    margin: 10rem 5rem  7rem ;
+    padding: 1rem .5rem;
+    float: left;
+    text-align: left;
+}
+
+.posts li p {
+    width: 80%;
+    margin: 1rem 1rem;
+}
+
+.posts img {
+    width: 90%;
+    height: 200px;
+    margin: 1rem;
+}
+
+.posts::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.posts button {
+    width: 100px;
+    height: 40px;
+    margin: 5rem 0.2rem;
+    background-color: #1abc9c;
+    border-bottom: 3px solid #16a085;
+    border-radius: 5px;
+    display: block;
+    
+}
+
+section > button {
+    display: block;
+    margin: 2rem auto;
+    background-color: rgba(0,0,0,0);
+    color: #ccc;
+    border: .2rem solid #ccc;
+    padding: .3rem;
+}
+
+section#join {
+  width: 100%;
+  height: 50vh;
+  background: url("../images/hikers1001.jpg") center/cover; 
+  position: relative;
+  color: #eee;
+  text-align: left;
+}
+section#join > h2 {
+    text-transform: uppercase;
+    margin-top: 12rem;
+}
+
+section#join > * {
+    width: 50%;
+    margin: 3.25rem 20rem; 
+    position: relative;
+    z-index: 2;
+}
+
+section#join:after {
+    content: '';
+    position: absolute;
+    top:0;left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26,188,156, .50) no-repeat url('../images/climbers.png') 100% 100%;
+}
+
+
+/* sign up section */
+
+#signUp {
+    background: #111;
+    width: 100%;
+    height: 15vh;
+    text-align: center;
+    margin: 0;
+}
+
+#signUp h3 {
+    background: #222;
+    color: #ccc;
+    font-size: 2rem;
+    width: 100%;
+    padding: 2.5rem 2rem;
+    margin: 0;
+}
+
+#signUp strong  a{
+    font-weight: 700;
+}
+
+section#signUp strong::after{
+    content: '';
+    display: inline-block;
+    background: url("../images/arrow.png");
 }
