@@ -48,18 +48,23 @@
           if(events){
             events.innerHTML ='';
             let eventList = '';
+            let i = 0
 
           data.events.forEach( ev => {
             
+            let text = ev.text.slice(0,45);
+            if (i < 4) {
             eventList += `<li>
                         <div>
                            <h5>${ev.date}</h5>
                            <h4><em>${ev.title}</em></h4>
-                           <p>${ev.text}</p>
+                           <p>${text}</p>
                         </div>
                          </li>`;
+            }
+            i++;
           });
-
+         
           events.insertAdjacentHTML('afterbegin', eventList);
 
           }
