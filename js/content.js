@@ -8,6 +8,8 @@
     .then((info) => data = info.json()).then(
        data => {
           console.log(data.events);
+          let x = window.location.pathname;
+          let page = x.split("/").pop();
 
           
           const locations = document.querySelector('.locations');
@@ -52,7 +54,11 @@
 
           data.events.forEach( ev => {
             
-            let text = ev.text.slice(0,45);
+            let text = ev.text;
+            if(page != "events.html") {
+            text = text.slice(0,45);
+            }
+
             let rnumber = Math.floor(Math.random() * 4) + 1;
             if (i < 4) {
             eventList += `<li>

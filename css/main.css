@@ -112,8 +112,7 @@ h1 {
 }
 
 nav {
-    padding: 1rem 2rem;
-    margin-right: 5rem;
+    margin-right: 10rem;
     float: right;
 }
 
@@ -121,7 +120,7 @@ nav li {
     width: 6.5rem;
     display: inline-block;
     text-align: left;
-    padding-right: 1rem;
+    padding: 0;
 }
 
 nav a {
@@ -358,7 +357,7 @@ section#signUp h3::after{
 }
 
 
-.hikers-list li {
+.hikers-list li, .events li {
    width: 100%;
    margin: 1rem;
 }
