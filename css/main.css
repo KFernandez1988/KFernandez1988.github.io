@@ -23,7 +23,7 @@ h1,h2 {
 }
 
 h3 {
-  font: 2.4 "Geogia Bold";
+  font: 2.4rem "Geogia Bold";
   color: #ccc;
 }
 
@@ -126,7 +126,7 @@ nav li {
 
 nav a {
     margin: 2rem 5rem;
-    padding: 2rem, 5rem;
+    padding: .3rem 1rem;
     border-right: 1px solid #eee;
     display: block;
     color: #eee;
