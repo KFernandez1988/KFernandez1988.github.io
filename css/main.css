@@ -16,7 +16,7 @@ h4, h5 {
     font-family: "Program OT Bold";
     color: #aaa;
  }
-h2 {
+h1,h2 {
     font: 3.5rem "Program OT Black";
     color: #eee;
     text-transform: uppercase;
@@ -72,7 +72,7 @@ header {
 
 header > * {
     width: 50%;
-    margin: 10rem;
+    margin: 5rem;
     position: relative;
     z-index: 2;
 }
@@ -106,25 +106,34 @@ h2 {
  margin: 3rem 0 0;
 }
 
+h1 {
+    width: 25%;
+    display: inline-block;
+}
+
 nav {
-    padding: 1rem 0;
-    margin: 1.5rem 0;
+    padding: 1rem 2rem;
+    margin-right: 5rem;
     float: right;
 }
 
 nav li {
     width: 6.5rem;
     display: inline-block;
+    text-align: left;
+    padding-right: 1rem;
 }
 
 nav a {
-    padding: 1.2rem, 2.5rem;
+    margin: 2rem 5rem;
+    padding: 2rem, 5rem;
     border-right: 1px solid #eee;
     display: block;
-    color: inherit;
+    color: #eee;
+    text-transform: uppercase;
     text-decoration: none;
-    text-align: center;
-    opacity: .5;
+    font-weight: 700;
+    opacity: .85;
 }
 nav a:hover {
     opacity: 1;
@@ -165,18 +174,30 @@ section#banner button {
 
 .locations {
     width: 25%;
-    background: #aaa;
+    background: #222;
     border-right: 3px solid #1abc9c;
     color: #ccc;
     margin: 5rem 15rem 25rem 95rem; 
     padding: 1.5rem; 
 }
 
-.locations em {
+
+.locations h2 {
+    margin: 0;
+    padding: .5rem ;
+    border-top: .1rem solid #888;
+    border-bottom: .1rem solid #888;
+}
+
+.locations strong {
+    display: block;
+    margin-top: 1rem;
     color: #eee;
 }
 
-
+.locations p {
+    color: #888;
+}
 
 /*** Posts section ***/
 .post ul {
@@ -192,6 +213,10 @@ section#banner button {
     padding: 1rem .5rem;
     float: left;
     text-align: left;
+}
+
+section > h2 {
+    margin-top: 10rem;
 }
 
 .posts li p {
@@ -299,7 +324,7 @@ section#signUp h3::after{
 /* last section beore footer */
 #last {
     width: 100%;
-    height: 50vh;
+    height: 55vh;
     display: block;
     background: #111;
     font-size: 1.5rem;
@@ -367,6 +392,17 @@ footer ul {
 }
 footer ul:nth-last-of-type(2) {
     float: left;
+    color: #1abc9c;
+    text-transform: uppercase;
+    
+}
+footer ul:nth-last-of-type(2) li {
+    padding: 0 1rem;
+    border-right: .1rem solid #aaa;
+}
+
+footer ul:nth-last-of-type(2) li:first-child {
+    color: #aaa;
 }
 
 footer ul:nth-last-of-type(1){
@@ -423,9 +459,122 @@ footer a[href="https://www.instagram.com"] {
     
 }
 
-/* footer a p {
-    background: no-repeat url("../images/facebook.png");
-    position: absolute;
+/* Events page */
+
+.banner-header {
     width: 100%;
-    height: 100%;
-   } */
+    text-align: center;
+}
+
+.banner-header h2 {
+    display: block;
+    margin: 15rem auto 0;
+    font-size: 10rem;
+    font-weight: 700;
+}
+
+#events {
+    width: 100%;
+}
+
+#events li {
+    width: 60%;
+    display: block;
+    margin: 10rem 1rem 25rem 25rem;
+}
+
+#events img {
+    width: 50%;
+    float: left;
+    margin: 5rem 2rem;
+}
+
+#events img:before {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear:before {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#events h5,
+ #events h4 {
+ width: 40%;
+ 
+}
+#events h5 {
+    margin: 5rem 0 2rem;
+}
+
+ #events p {
+     width: 40%;
+ }
+ section li > * {
+    display: inline-block;
+} 
+
+
+/** contact page modifications **/
+
+main {
+    width: 75%;
+    display: block;
+    margin: 1rem auto;
+}
+
+main > * {
+    width: calc(100%/2.5);
+    display: inline-block;
+}
+
+#contact {
+    margin: 6rem 5rem
+}
+
+#contact > * {
+    margin: .5rem;
+}
+
+#contact p:nth-last-of-type(even) {
+    margin-top: 2rem;
+}
+
+#contact h2 {
+    text-transform: uppercase;
+    padding: 2rem;
+    font-weight: 600;
+    font-size: 5rem;
+    border-bottom: .5rem solid #aaa;
+}
+
+form {
+    background-color: #eee;
+    padding: 5rem 2rem;
+    margin: 10rem 0;
+    
+}
+input, textarea, select, form button {
+    display: block;
+    width: 75%;
+    padding: 1rem 1rem;
+    margin: 2.5rem auto;
+    background-color: #aaa;
+    border-radius: 10px;
+    color: #eee;
+}
+
+input::placeholder {
+    color: #eee;
+}
+
+textarea::placeholder {
+    color: #eee;
+}
+
+form button {
+    background-color: #1abc9c;
+}

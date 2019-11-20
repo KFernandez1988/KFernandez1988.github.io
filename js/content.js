@@ -7,7 +7,7 @@
     fetch("https://joshbloom.github.io/dws1/data/hikersguide.json")
     .then((info) => data = info.json()).then(
        data => {
-          console.log(data.posts);
+          console.log(data.events);
 
           
           const locations = document.querySelector('.locations');
@@ -15,7 +15,7 @@
           if(locations) {
           let location = data.locations[0];
           locations.innerHTML = `<h2>${location.city}, ${location.state}</h2>
-          <p><em></b>${location.title}</b></em></p>
+          <strong>${location.title}</strong>
           <p>${location.text}</p>`;
 
           }
@@ -53,13 +53,14 @@
           data.events.forEach( ev => {
             
             let text = ev.text.slice(0,45);
+            let rnumber = Math.floor(Math.random() * 4) + 1;
             if (i < 4) {
             eventList += `<li>
-                        <div>
+                           <img src="images/hikers100${rnumber}.jpg" > 
                            <h5>${ev.date}</h5>
                            <h4><em>${ev.title}</em></h4>
                            <p>${text}</p>
-                        </div>
+                     
                          </li>`;
             }
             i++;
