@@ -135,7 +135,7 @@ request.onload = () => {
           <strong>${location.title}</strong>
           <p>${location.text}</p>`;
 
-          }
+          
 
           const banner = locations.parentNode;
           let otherLocations = '<ol class="clear locals">';
@@ -146,7 +146,7 @@ request.onload = () => {
             if(data.locations[0] == locals){
                selected = 'selected';
             }
-
+         
           otherLocations +=  `
             <li class="${selected}">
              <article class="hidden">
@@ -159,13 +159,14 @@ request.onload = () => {
           });
           otherLocations += '</ol>'
 
-          banner.insertAdjacentHTML('beforeend', otherLocations);
-          
-          
+          banner.insertAdjacentHTML('beforeend', otherLocations);   
+         }
+
+         
           const posts = document.querySelector('.posts');
 
           if(posts) {
-            //console.log(posts);
+            console.log(posts);
             let postsList = '';
             posts.innerHTML = '';
 

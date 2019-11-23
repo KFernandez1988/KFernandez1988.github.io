@@ -135,17 +135,69 @@ window.addEventListener('load', () => {
             let parent = input.parentNode;
                 if(input.tagName == 'INPUT') {
 
-                    if(input.value == '' && input.nextElementSibling == null){
-                       let err = `<span> Your input is empty and this field is required<span>`;
+                    if(input.value.length == 0 || input.nextElementSibling == null) {
+                        let span = parent.querySelector('.wrong');
+                        if(span) {
+                         span.remove();
+                        }
+                       let err = `<span class="is-empty"> Your input is empty and this field is required<span>`;
                         parent.insertAdjacentHTML('beforeend', err);
+                    }
                     } else {
-                        let span = parent.querySelector('span');
-                        if(span && input.value != '') {
+                        let span = parent.querySelector('.is-empty');
+                        if(input.value.length !== 0) {
                             span.remove();
                         }
                     }
 
-                }
+                    console.log(input.value.length);
+
+                    switch (input.type) {
+                        case "tel": 
+                        if(input.value.match(/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/))
+                              {
+                                let span = parent.querySelector('.wrong');
+                                if(span) {
+                                  span.remove();
+                                }
+                              }
+                            else
+                              {        
+                                let span = parent.querySelector('.is-empty');
+                                if(input.value.length !== 0) {
+                                    span.remove();
+                                } 
+                                if(input.value.length < 10 && input.value.length > 0)   {        
+                                    let err = `<span class="wrong"> Enter the 10 digit number <span>`;
+                                    parent.insertAdjacentHTML('beforeend', err);
+                                }
+                              }
+                        break;
+                        case "email": 
+                        if(input.value.match( /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i))
+                        {
+                          let span = parent.querySelector('.wrong');
+                          if(span) {
+                            span.remove();
+                          }
+                        }
+                      else
+                        {        
+                          let span = parent.querySelector('.is-empty');
+                          if(input.value.length !== 0) {
+                              span.remove();
+                          } 
+                          if(input.value.length > 0)   {        
+                              let err = `<span class="wrong"> Enter a correct email example: some@thing.com <span>`;
+                              parent.insertAdjacentHTML('beforeend', err);
+                          }
+                        };
+                         break;
+                        default: console.log("text type"); break;
+                        
+                    }
+
+                
         });
         console.log(form.lastElementChild);
         form.lastElementChild.addEventListener('click', event => {

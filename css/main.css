@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    font: 1.6rem/1.5 "Program OT", arial, sans-serif;
+    font: 1.6rem/1.5 "Program OT", arial, "sans serif";
     background: #111;
     color: #888;
 }
@@ -47,6 +47,10 @@ body > section:nth-of-type(odd), body {
 }
 body > section:nth-last-of-type(event) {
     background: #aaa;
+}
+
+a {
+    color: #eee;
 }
 
 
