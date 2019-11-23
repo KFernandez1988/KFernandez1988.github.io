@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
 
    
     const locals = document.querySelector('.locals');
-    console.log(locals);
+   if(locals) {
     locals.addEventListener('click', event => {
         let li = event.target;
        
@@ -23,45 +23,82 @@ window.addEventListener('load', () => {
         }
     });
 
-
+   }
+    
 
     const buttons = document.querySelectorAll('#carol-buttons button');
-    console.log(buttons);
+    if(buttons.length > 0){
+        buttons[0].addEventListener('click',event => {
 
-    buttons[0].addEventListener('click',event => {
-
-        const locals = document.querySelector('.locals');
-
-        let lis = locals.children;
-        let index = 0;
-
-        for(let i = 0; i < lis.length; i++) {
-            
-            if(!lis[i].classList.contains("selected")) { 
-                index++;
-            } else {
-                break;
+            const locals = document.querySelector('.locals');
+    
+            let lis = locals.children;
+            let index = 0;
+    
+            for(let i = 0; i < lis.length; i++) {
+                
+                if(!lis[i].classList.contains("selected")) { 
+                    index++;
+                } else {
+                    break;
+                }
+                
+            };
+            let previous = index -1;
+            if(previous == -1) {
+                previous = locals.children.length -1;
             }
-            
-        };
-        let previous = index -1;
-        if(previous == -1) {
-            previous = locals.children.length -1;
-        }
-        let locations = document.querySelector(".locations");
-        let article = lis[previous].querySelector('article');
- 
-        locations.innerHTML = article.innerHTML;       
-             
-        document.querySelector('.selected').classList.remove("selected");
-        lis[previous].className = 'selected';
+            let locations = document.querySelector(".locations");
+            let article = lis[previous].querySelector('article');
+     
+            locations.innerHTML = article.innerHTML;       
+                 
+            document.querySelector('.selected').classList.remove("selected");
+            lis[previous].className = 'selected';
+    
+        } ,false);
+    
+        console.log(buttons);
+    
+        buttons[1].addEventListener('click',event => {
+    
+            const locals = document.querySelector('.locals');
+    
+            let lis = locals.children;
+            let index = 0;
+    
+            for(let i = 0; i < lis.length; i++) {
+                
+                if(!lis[i].classList.contains("selected")) { 
+                    index++;
+                } else {
+                    break;
+                }
+                
+            };
+            let next = index + 1;
+            if( next == locals.children.length) {
+                next = 0;
+            }
+            let locations = document.querySelector(".locations");
+            let article = lis[next].querySelector('article');
+     
+            locations.innerHTML = article.innerHTML;       
+                 
+            document.querySelector('.selected').classList.remove("selected");
+            lis[next].className = 'selected';
+    
+        } ,false);
+    
+        
+    }
 
-    } ,false);
+    let x = window.location.pathname;
+     let page = x.split("/").pop();
 
-    console.log(buttons);
+    if(page == 'index.html') {
 
-    buttons[1].addEventListener('click',event => {
-
+    setInterval( () => {
         const locals = document.querySelector('.locals');
 
         let lis = locals.children;
@@ -87,8 +124,38 @@ window.addEventListener('load', () => {
              
         document.querySelector('.selected').classList.remove("selected");
         lis[next].className = 'selected';
+    }, 5000);
+    }
+    
+        const form = document.forms['form'];
+        if(form) {
+        form.addEventListener('focusout', event => {
+    
+            let input = event.target;
+            let parent = input.parentNode;
+                if(input.tagName == 'INPUT') {
 
-    } ,false)
+                    if(input.value == '' && input.nextElementSibling == null){
+                       let err = `<span> Your input is empty and this field is required<span>`;
+                        parent.insertAdjacentHTML('beforeend', err);
+                    } else {
+                        let span = parent.querySelector('span');
+                        if(span && input.value != '') {
+                            span.remove();
+                        }
+                    }
+
+                }
+        });
+        console.log(form.lastElementChild);
+        form.lastElementChild.addEventListener('click', event => {
+            event.preventDefault();
+            
+        })
+
+    }
+
+    
 
 }, false);
     
