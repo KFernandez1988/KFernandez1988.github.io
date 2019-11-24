@@ -124,9 +124,7 @@ window.addEventListener('load', () => {
              
         document.querySelector('.selected').classList.remove("selected");
         lis[next].className = 'selected';
-    }, 5000);
-    }
-    
+    }, 5000)};
         const form = document.forms['form'];
         if(form) {
         form.addEventListener('focusout', event => {
@@ -134,18 +132,16 @@ window.addEventListener('load', () => {
             let input = event.target;
             let parent = input.parentNode;
                 if(input.tagName == 'INPUT') {
-
-                    if(input.value.length == 0 || input.nextElementSibling == null) {
+                    if(input.value.length == 0 && input.nextElementSibling == null) {
                         let span = parent.querySelector('.wrong');
                         if(span) {
                          span.remove();
                         }
                        let err = `<span class="is-empty"> Your input is empty and this field is required<span>`;
-                        parent.insertAdjacentHTML('beforeend', err);
-                    }
+                        parent.insertAdjacentHTML('beforeend', err);                  
                     } else {
                         let span = parent.querySelector('.is-empty');
-                        if(input.value.length !== 0) {
+                        if(input.value.length > 0) {
                             span.remove();
                         }
                     }
@@ -194,20 +190,25 @@ window.addEventListener('load', () => {
                         };
                          break;
                         default: console.log("text type"); break;
-                        
+                     }
                     }
-
+                }, false);
                 
-        });
-        console.log(form.lastElementChild);
-        form.lastElementChild.addEventListener('click', event => {
-            event.preventDefault();
-            
-        })
+        if(form.lastElementChild) {
+            form.lastElementChild.addEventListener('click', event => {
+                let isSpan = form.querySelectorAll('span');
+                let inputs = form.querySelectorAll('input');
+                let isValue = false;
+                inputs.forEach(input => {
+                    if(input.value.length === 0){
+                        isValue = true;
+                    }
+                });
+                if(isSpan.length > 0 || isValue) {event.preventDefault();}
+                            
+            });
 
-    }
-
-    
-
+        }
+     }
 }, false);
     
